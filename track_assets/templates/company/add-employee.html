@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {% include 'base/alert.html' %}
+    {% for form in forms %}
+    <div class="form-group">
+     {{form.label}} : {{form}}
+    </div>
+    {% endfor %}
+
+    <!-- form-group form-check .// -->
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary btn-block">
+        Save
+      </button>
+    </div>
+    <!-- form-group// -->
+  </form>
+
+{% endblock content %}
+

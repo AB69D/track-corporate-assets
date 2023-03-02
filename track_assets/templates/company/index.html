@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+      <!-- sa-app__body -->
+      <h1>Home page</h1>
+      <a href="{% url 'add_employee' %}"> Add Employee</a>
+      <!-- sa-app__body / end -->
+        <br>
+          {% for emp in employees %}
+            {{emp.name}}
+          {% endfor %}
+{% endblock content %}
