@@ -61,3 +61,7 @@ def login_page(request):
             messages.warning(request, 'Admin user can not login')
         
     return render(request, 'account/login.html')
+
+def logout_page(request):
+    logout(request)
+    return render(request, 'company/index.html')
