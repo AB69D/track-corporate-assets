@@ -141,3 +141,7 @@ STATICFILES_DIR = {
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'public/static') 
 MEDIA_URL = '/media/'
 
+# sslcommerz 
+
+STORE_ID = 'ab9d6400c32c52210'
+STORE_PASS = 'ab9d6400c32c52210@ssl'

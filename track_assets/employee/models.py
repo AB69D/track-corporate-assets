@@ -24,3 +24,16 @@ class Employee(models.Model):
     def __str__(self):
         return self.name
     
+
+PAYMENT_METHOD = (
+    ('Cash on Delivery', 'Cash on Delivery'),
+    ('PayPal', 'PayPal'),
+    ('SSLcommerz', 'SSLcommerz'),
+)
+
+class payment_way(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    payment_method = models.CharField(max_length= 30, choices=PAYMENT_METHOD, default='Cash on Delivery')
+
+    def __str__(self):
+        return self.user.username

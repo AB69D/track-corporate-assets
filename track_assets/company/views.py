@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from employee.forms import Employee_form
+from employee.forms import *
 from django.views.generic import TemplateView
 from employee.models import *
 # Create your views here.
@@ -38,3 +38,12 @@ def add_employee(request):
     }
     return render(request, 'company/add-employee.html',context)        
         
+
+def payment_getway(request):
+    forms =  payment_form()
+
+    context= {
+        'forms': forms
+    }
+
+    return render(request, 'company/payment.html', context)

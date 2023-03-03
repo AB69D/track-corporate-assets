@@ -1,18 +1,23 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
 <form method="POST">
-    {% csrf_token %}
+  {% csrf_token %}
 
-    {% include 'base/alert.html' %}
-    {% for form in forms %}
-    <div class="form-group">
-      {{form}}
-    </div>
-    {% endfor %}
+  {% include 'base/alert.html' %}
+  {% for form in forms %}
+  <div class="form-group">
+    {{form}}
+  </div>
+  {% endfor %}
 
-    <!-- form-group form-check .// -->
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary btn-block">
-        Signup
-      </button>
-    </div>
-    <!-- form-group// -->
-  </form>
+  <!-- form-group form-check .// -->
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary btn-block">
+      Signup
+    </button>
+  </div>
+  <!-- form-group// -->
+</form>
+{% endblock content %}
+
