@@ -3,7 +3,7 @@ from company.models import *
 from django.contrib.auth.models import User
 # Create your models here.
 
-
+# this is employee table 
 class Employee(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=100, null=False, blank=False)
@@ -24,13 +24,15 @@ class Employee(models.Model):
     def __str__(self):
         return self.name
     
-
+# type of payment are include here
 PAYMENT_METHOD = (
     ('Cash on Delivery', 'Cash on Delivery'),
     ('PayPal', 'PayPal'),
     ('SSLcommerz', 'SSLcommerz'),
 )
 
+
+# payment class connected with user table 
 class payment_way(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     payment_method = models.CharField(max_length= 30, choices=PAYMENT_METHOD, default='Cash on Delivery')

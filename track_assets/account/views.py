@@ -30,7 +30,7 @@ def signup(request):
     return render(request, 'account/signup.html', context)
 
 
-
+# views for log in page 
 def login_page(request):
         # if request.user.is_authenticated:
         #     return redirect('index')
@@ -62,6 +62,8 @@ def login_page(request):
         
     return render(request, 'account/login.html')
 
+
+# logout method for user
 def logout_page(request):
     logout(request)
     return render(request, 'company/index.html')

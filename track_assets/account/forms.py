@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
-
+# registration form for user 
 class SignUpForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control input-box', 'placeholder': 'Username'}),label = False)
     email = forms.CharField(widget=forms.EmailInput(attrs={'class': 'form-control input-box', 'placeholder': 'Email Address'}),label = False)
